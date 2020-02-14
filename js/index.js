@@ -7,23 +7,30 @@ let $bar = document.querySelector(`.progress-bar`)
 
 // ********** STEPS
 
-// Set the display of the .progress-bar to none
-$bar.style.display = `none`
+// // Set the display of the .progress-bar to none
+// $bar.style.display = `none`
 
-// Set the display of the .progress-bar to block
-$bar.style.display = `block
-`
-// Store the window height
+// // Set the display of the .progress-bar to block
+// $bar.style.display = `block`
+
+// Capture the scroll of the window
+$win.addEventListener(`scroll`, event =>{ 
+    // Store the window height
 let winH = $doc.clientHeight // the document's parent's height
 
 // Store the document height
 let docH = $doc.scrollHeight
 
 // if document height < window height 
-if ( docH <= winH ) { console.log(`no scroller needed`) }
+if ( docH <= winH ) { 
+    // Set the display of the .progress-bar to none
+    $bar.style.display = `none`
+}
 
 // ..else.. statement
-else { console.log(`I need a progress bar`) }
+else { // Set the display of the .progress-bar to block
+    $bar.style.display = `block`
+}
 
 // How much CAN be scrolled?
 let canBeScrolled = docH - winH
@@ -35,7 +42,6 @@ let hasBeenScrolled = window.scrollY
 let percentScrolled = hasBeenScrolled / canBeScrolled
 
 // Apply a width to the .progress-bar
-$bar.style.width = `25%`
+$bar.style.width = `${percentScrolled * 100}%`
 
-// Capture the scroll of the window
-$win.addEventListener(`scroll`, event =>{ console.log(`scrolled!!`)} )
+} )
