@@ -1,3 +1,12 @@
+// ********** REFERENCES
+
+let $win = window
+let $doc = document.documentElement //html
+let $bar = document.querySelector(`.progress-bar`)
+
+
+// ********** STEPS
+
 // Set the display of the .progress-bar to none
 
 // Set the display of the .progress-bar to block
