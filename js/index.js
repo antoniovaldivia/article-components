@@ -26,9 +26,16 @@ if ( docH <= winH ) { console.log(`no scroller needed`) }
 else { console.log(`I need a progress bar`) }
 
 // How much CAN be scrolled?
+let canBeScrolled = docH - winH
 
 // How much HAS been scrolled?
+let hasBeenScrolled = window.scrollY
 
 // Determine the amount scrolled as a percentage of the total possible
+let percentScrolled = hasBeenScrolled / canBeScrolled
 
 // Apply a width to the .progress-bar
+$bar.style.width = `25%`
+
+// Capture the scroll of the window
+$win.addEventListener(`scroll`, event =>{ console.log(`scrolled!!`)} )
