@@ -2,12 +2,13 @@ body {
   font: 1em helvetica, arial, sans-serif;
   background-color: #fff;
   color: #222;
-  height: 2em;
+
 }
 
 .story {
-  padding: 0 1em;
+  padding: 1em 1em;
   margin: 1em 0;
+  
 }
 
 .bar {
@@ -31,4 +32,6 @@ body {
   left: 0;
   line-height: 2;
   padding-left: 1em;
+  opacity: 1;
+  transition: opacity 300ms;
 }
